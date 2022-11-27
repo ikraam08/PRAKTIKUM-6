@@ -1,8 +1,8 @@
 package Pertemuan10;
 
 public class Persegi extends BangunDatar {
-    private float panjang;
-    private float lebar;
+    private final float panjang;
+    private final float lebar;
 
     public Persegi(String warna,float panjang, float lebar) {
         super(warna);
@@ -11,7 +11,7 @@ public class Persegi extends BangunDatar {
 
     }
     @Override
-    public void draw(String warna) {
+    public void draw() {
         System.out.println(getWarna());
         System.out.println("Gambar Persegi");
     }

@@ -13,15 +13,8 @@ public abstract class BangunDatar {
         return this.warna;
     }
 
-    public void display(){
-        System.out.println("Warna" +this.warna);
-        System.out.println(getWarna());
-    }
-
-    public abstract void draw(String warna);
+    public abstract void draw();
 
     public abstract float luas();
 
 }
-
-

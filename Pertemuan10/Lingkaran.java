@@ -10,7 +10,7 @@ public class Lingkaran extends BangunDatar {
 
 
     @Override
-    public void draw(String warna) {
+    public void draw() {
         System.out.println("Gambar Bangun Datar");
         System.out.println("\n" + getWarna());
         System.out.println("Gambar Lingkaran");
