@@ -159,4 +159,4 @@ public class Main {
 ```
 
 * *Hasil output program:*
-  ![img 1](ssan/ssan1.png)
+  ![img 1](screenshoot/ssan.png)
