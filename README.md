@@ -14,19 +14,28 @@ Matkul : Pemrograman Orientasi Objek
 ```java
 package Pertemuan10;
 
+// Abstrak class Bangun Datar
 public abstract class BangunDatar {
+    // Atribute Warna
     String warna;
 
+    // Constructor Bangun Datar
     public BangunDatar (String warna){
         this.warna = warna;
     }
+
+    //SETTER
     public void setWarna(String warna) {
         this.warna = warna;
     }
+    //GETTER
+
     public String getWarna() {
+
         return this.warna;
     }
 
+    // Abstract Method
     public abstract void draw();
 
     public abstract float luas();
@@ -40,26 +49,29 @@ public abstract class BangunDatar {
 ```java
 package Pertemuan10;
 
+//Inherite Dari Bangun Datar
 public class Lingkaran extends BangunDatar {
-  private final int r;
+    // Atribute Lingkaran
+    private final int r;
 
-  public Lingkaran(String warna,int r) {
-    super(warna);
-    this.r = r;
-  }
+    // Overload constructor
+    public Lingkaran(String warna,int r) {
+        super(warna);
+        this.r = r;
+    }
 
-
-  @Override
-  public void draw() {
-    System.out.println("Gambar Bangun Datar");
-    System.out.println("\n" + getWarna());
-    System.out.println("Gambar Lingkaran");
-  }
-
-  public float luas() {
-    System.out.println("Luas Bangun Datar");
-    return (float) (Math.PI * r *r);
-  }
+    // Abstract Methode draw
+    @Override
+    public void draw() {
+        System.out.println("Gambar Bangun Datar");
+        System.out.println("\n" + getWarna());
+        System.out.println("Gambar Lingkaran");
+    }
+    // Abstract Method luas
+    public float luas() {
+        System.out.println("Luas Bangun Datar");
+        return (float) (Math.PI * r *r);
+    }
 
 }
 ```
@@ -68,27 +80,33 @@ public class Lingkaran extends BangunDatar {
 ```java
 package Pertemuan10;
 
+// Inherite Dari Bangun Datar
 public class Persegi extends BangunDatar {
-  private final float panjang;
-  private final float lebar;
+    // Atribute
+    private final float panjang;
+    private final float lebar;
 
-  public Persegi(String warna,float panjang, float lebar) {
-    super(warna);
-    this.panjang = panjang;
-    this.lebar = lebar;
+    //Overloading constructor
+    public Persegi(String warna,float panjang, float lebar) {
+        super(warna);
+        this.panjang = panjang;
+        this.lebar = lebar;
 
-  }
-  @Override
-  public void draw() {
-    System.out.println(getWarna());
-    System.out.println("Gambar Persegi");
-  }
+    }
 
-  @Override
-  public float luas() {
+    //Overide Abstract Method draw
+    @Override
+    public void draw() {
+        System.out.println("\n"+getWarna());
+        System.out.println("Gambar Persegi");
+    }
 
-    return (panjang * lebar);
-  }
+    //Overloading Abstract Method luas
+    @Override
+    public float luas() {
+
+        return (panjang * lebar);
+    }
 }
 ```
 ### 4.Segitiga.Main.java
@@ -96,26 +114,30 @@ public class Persegi extends BangunDatar {
 ```java
 package Pertemuan10;
 
+// Inherite Dari Bangun Datar
 public class Segitiga extends BangunDatar{
-    private int alas;
-    private int tinggi;
+  //Atribute 
+  private final int alas;
+  private final int tinggi;
 
-    public Segitiga(String warna,int alas, int tinggi) {
-        super(warna);
-        this.tinggi = tinggi;
-        this.alas = alas;
+  // Overloading constructor
+  public Segitiga(String warna,int alas, int tinggi) {
+    super(warna);
+    this.tinggi = tinggi;
+    this.alas = alas;
 
-    }
-
-    @Override
-    public void draw() {
-        System.out.println(getWarna());
-        System.out.println("Gambar Segitiga");
-    }
-    @Override
-    public float luas() {
-        return (float) (0.5 * alas * tinggi);
-    }
+  }
+  // overriding Abstract method draw 
+  @Override
+  public void draw() {
+    System.out.println("\n"+getWarna());
+    System.out.println("Gambar Segitiga");
+  }
+  //overriding Abstract method luas
+  @Override
+  public float luas() {
+    return (float) (0.5 * alas * tinggi);
+  }
 }
 
 ```
@@ -124,26 +146,35 @@ public class Segitiga extends BangunDatar{
 ```java
 package Pertemuan10;
 
+//Call Method
 public class Main {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        BangunDatar lingkaran =new Lingkaran("Hitam",500);
-        BangunDatar persegi =new Persegi("Kuning",50,50);
-        BangunDatar segitiga= new Segitiga("Hijau",30,60);
-        lingkaran.setWarna("Merah");
-        lingkaran.draw();
-        segitiga.draw();
-        persegi.draw();
-        System.out.println();
-        System.out.println("\nLuas Lingkaran\t: " + lingkaran.luas());
-        System.out.println("Luas Persegi\t: " + persegi.luas());
-        System.out.println("Luas Segitiga\t: " + segitiga.luas());
+    //Pembuatan object dari Subclass dengan polymorphic tipe data BangunDatar
+
+    BangunDatar lingkaran =new Lingkaran("Hitam",500);
+    BangunDatar persegi =new Persegi("Kuning",250,250);
+    BangunDatar segitiga= new Segitiga("Hijau",200,260);
+
+    //Pengubahan warna dengan setter
+    lingkaran.setWarna("Merah");
+
+    //Pemanggilan Abstract Method draw
+    lingkaran.draw();
+    segitiga.draw();
+    persegi.draw();
+
+    //Pemanggilan Abstract Method luas
+    System.out.println();
+    System.out.println("\nLuas Lingkaran\t: " + lingkaran.luas());
+    System.out.println("Luas Persegi\t: " + persegi.luas());
+    System.out.println("Luas Segitiga\t: " + segitiga.luas());
 
 
 
 
 
-    }
+  }
 }
 
 ```
