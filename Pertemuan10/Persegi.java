@@ -4,16 +4,16 @@ public class Persegi extends BangunDatar {
     private float panjang;
     private float lebar;
 
-    public Persegi(float panjang, float lebar) {
+    public Persegi(String warna,float panjang, float lebar) {
+        super(warna);
         this.panjang = panjang;
         this.lebar = lebar;
 
     }
-
     @Override
-    public void draw() {
-
-        System.out.println("Gambar persegi");
+    public void draw(String warna) {
+        System.out.println(getWarna());
+        System.out.println("Gambar Persegi");
     }
 
     @Override

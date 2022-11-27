@@ -1,16 +1,18 @@
 package Pertemuan10;
 
 public class Lingkaran extends BangunDatar {
-    private int r;
+    private final int r;
 
-    public Lingkaran(int r) {
+    public Lingkaran(String warna,int r) {
+        super(warna);
         this.r = r;
     }
 
+
     @Override
-    public void draw() {
+    public void draw(String warna) {
         System.out.println("Gambar Bangun Datar");
-        System.out.println();
+        System.out.println("\n" + getWarna());
         System.out.println("Gambar Lingkaran");
     }
 
