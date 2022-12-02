@@ -35,9 +35,9 @@ public abstract class BangunDatar {
         return this.warna;
     }
 
-    // Abstract Method
+    // Abstract Method Gambar
     public abstract void draw();
-
+    // Abstract Method Gambar
     public abstract float luas();
 
 }
@@ -60,14 +60,14 @@ public class Lingkaran extends BangunDatar {
         this.r = r;
     }
 
-    // Abstract Methode draw
+    // Abstract Methode Gambar
     @Override
     public void draw() {
         System.out.println("Gambar Bangun Datar");
         System.out.println("\n" + getWarna());
         System.out.println("Gambar Lingkaran");
     }
-    // Abstract Method luas
+    // Abstract Method Luas
     public float luas() {
         System.out.println("Luas Bangun Datar");
         return (float) (Math.PI * r *r);
@@ -75,48 +75,47 @@ public class Lingkaran extends BangunDatar {
 
 }
 ```
-### 3.Persegi.java
-* *CODINGAN FILE 3
-```java
-package Pertemuan10;
-
-// Inherite Dari Bangun Datar
-public class Persegi extends BangunDatar {
-    // Atribute
-    private final float panjang;
-    private final float lebar;
-
-    //Overloading constructor
-    public Persegi(String warna,float panjang, float lebar) {
-        super(warna);
-        this.panjang = panjang;
-        this.lebar = lebar;
-
-    }
-
-    //Overide Abstract Method draw
-    @Override
-    public void draw() {
-        System.out.println("\n"+getWarna());
-        System.out.println("Gambar Persegi");
-    }
-
-    //Overloading Abstract Method luas
-    @Override
-    public float luas() {
-
-        return (panjang * lebar);
-    }
-}
-```
-### 4.Segitiga.Main.java
+### 4.Persegi.java
 * *CODINGAN FILE 4
 ```java
 package Pertemuan10;
 
 // Inherite Dari Bangun Datar
+public class Persegi extends BangunDatar {
+  // Atribute
+  private final float panjang;
+  private final float lebar;
+
+  //Overloading constructor
+  public Persegi(String warna,float panjang, float lebar) {
+    super(warna);
+    this.panjang = panjang;
+    this.lebar = lebar;
+
+  }
+
+  //Overide Abstract Method Gambar
+  @Override
+  public void draw() {
+    System.out.println("\n"+getWarna());
+    System.out.println("Gambar Persegi");
+  }
+
+  //Overriding Abstract Method Luas
+  @Override
+  public float luas() {
+
+    return (panjang * lebar);
+  }
+}
+```
+### 5.Segitiga.java
+* *CODINGAN FILE 4
+```java
+package Pertemuan10;
+// Inherite Dari Bangun Datar
 public class Segitiga extends BangunDatar{
-  //Atribute 
+  //Atribute
   private final int alas;
   private final int tinggi;
 
@@ -127,13 +126,13 @@ public class Segitiga extends BangunDatar{
     this.alas = alas;
 
   }
-  // overriding Abstract method draw 
+  // overriding Abstract method Gambar
   @Override
   public void draw() {
     System.out.println("\n"+getWarna());
     System.out.println("Gambar Segitiga");
   }
-  //overriding Abstract method luas
+  //overriding Abstract Method Luas Casting UP int to float
   @Override
   public float luas() {
     return (float) (0.5 * alas * tinggi);
@@ -141,11 +140,10 @@ public class Segitiga extends BangunDatar{
 }
 
 ```
-### 5.Main.Main.java
-* *CODINGAN FILE 5
+### 5.Main.java
+* *CODINGAN FILE 4
 ```java
 package Pertemuan10;
-
 //Call Method
 public class Main {
   public static void main(String[] args) {
@@ -170,10 +168,7 @@ public class Main {
     System.out.println("Luas Persegi\t: " + persegi.luas());
     System.out.println("Luas Segitiga\t: " + segitiga.luas());
 
-
-
-
-
+    
   }
 }
 
