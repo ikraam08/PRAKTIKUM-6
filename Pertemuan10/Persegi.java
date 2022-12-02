@@ -14,14 +14,14 @@ public class Persegi extends BangunDatar {
 
     }
 
-    //Overide Abstract Method draw
+    //Overide Abstract Method Gambar
     @Override
     public void draw() {
         System.out.println("\n"+getWarna());
         System.out.println("Gambar Persegi");
     }
 
-    //Overloading Abstract Method luas
+    //Overriding Abstract Method Luas
     @Override
     public float luas() {
 

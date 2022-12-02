@@ -11,14 +11,14 @@ public class Lingkaran extends BangunDatar {
         this.r = r;
     }
 
-    // Abstract Methode draw
+    // Abstract Methode Gambar
     @Override
     public void draw() {
         System.out.println("Gambar Bangun Datar");
         System.out.println("\n" + getWarna());
         System.out.println("Gambar Lingkaran");
     }
-    // Abstract Method luas
+    // Abstract Method Luas
     public float luas() {
         System.out.println("Luas Bangun Datar");
         return (float) (Math.PI * r *r);

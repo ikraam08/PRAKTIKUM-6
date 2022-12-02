@@ -21,9 +21,9 @@ public abstract class BangunDatar {
         return this.warna;
     }
 
-    // Abstract Method
+    // Abstract Method Gambar
     public abstract void draw();
-
+    // Abstract Method Gambar
     public abstract float luas();
 
 }

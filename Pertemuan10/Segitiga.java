@@ -12,13 +12,13 @@ public class Segitiga extends BangunDatar{
         this.alas = alas;
 
     }
-    // overriding Abstract method draw
+    // overriding Abstract method Gambar
     @Override
     public void draw() {
         System.out.println("\n"+getWarna());
         System.out.println("Gambar Segitiga");
     }
-    //overriding Abstract method luas
+    //overriding Abstract Method Luas Casting UP int to float
     @Override
     public float luas() {
         return (float) (0.5 * alas * tinggi);
