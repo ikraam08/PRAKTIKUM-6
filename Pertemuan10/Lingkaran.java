@@ -18,7 +18,7 @@ public class Lingkaran extends BangunDatar {
         System.out.println("\n" + getWarna());
         System.out.println("Gambar Lingkaran");
     }
-    // Abstract Method Luas
+    // Abstract Method Luas Casting UP int to float
     public float luas() {
         System.out.println("Luas Bangun Datar");
         return (float) (Math.PI * r *r);
